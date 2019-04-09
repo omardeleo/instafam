@@ -1,5 +1,5 @@
 @users.each do |user|
-  json.id user.id
-  json.name user.name
-  json.username user.username
+  json.set! user.id do
+    json.partial! '/api/users/user', user: user
+  end
 end
