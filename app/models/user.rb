@@ -29,8 +29,8 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Post
 
-    # has_many :likes,
-    #     foreign_key: :liker_id
+    has_many :likes,
+        foreign_key: :liker_id
 
     # has_many :comments,
     #     foreign_key: :author_id,
