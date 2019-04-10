@@ -1,0 +1,152 @@
+.login-form-container {
+  margin-top:40px;
+  margin-left: 35px;
+  font-family: sans-serif;
+}
+
+.login-input {
+  text-indent: 2px;
+}
+
+.login-form-container a {
+  text-decoration: none;
+  color: #3897f0;
+}
+
+.toggle-text {
+  height: 40px;
+  width: 350px;
+  display: flex;
+  text-align: center;
+  background-color: white;
+  color: #808080;
+  display: flex;
+  justify-content: center;
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+  padding-bottom: 15px;
+}
+
+.toggle-text-collapse {
+  height:0px;
+}
+
+.login-form-box {
+  width: 350px;
+  min-height: 180px;
+  max-height: 500px;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  border-top: 0px;
+}
+
+.login-form {
+  width: 350px;
+  margin-left: 35px;
+  margin-bottom: 25px;
+}
+
+.login-input {
+  width: 275px;
+  height: 30px;
+  margin-bottom: 5px;
+  font-size: 12px;
+  background-color: WhiteSmoke;
+  border:  1px solid #e6e6e6;
+  border-radius: 2px;
+}
+
+::-webkit-input-placeholder {
+  color: DarkGray;
+  box-sizing: border-box;
+  text-indent: 2px;
+  font-size: 14px;
+}
+
+::-moz-placeholder {
+  color: DarkGray;
+  box-sizing: border-box;
+  text-indent: 2px;
+  font-size: 14px;
+}
+:-ms-input-placeholder {
+  color: DarkGray;
+  box-sizing: border-box;
+  text-indent: 2px;
+  font-size: 14px;
+}
+:-moz-placeholder {
+  color: DarkGray;
+  box-sizing: border-box;
+  text-indent: 2px;
+}
+
+.toggle-session-container {
+  margin-top: 12px;
+  width: 350px;
+  height: 70px;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-list {
+  width: 350px;
+  color: #990000;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: 15px;
+}
+.error-list li {
+  margin-top: 10px;
+}
+
+.login-form-button {
+   height: 30px;
+   width: 280px;
+   border-radius: 4px;
+   font-size: 15px;
+   color: white;
+   background: #3897f0;
+   border: none;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   box-sizing: border-box;
+   padding-top:6px;
+}
+
+.submit-button {
+   height: 30px;
+   width: 280px;
+   border-radius: 4px;
+   margin-top: 10px;
+   font-size: 15px;
+   color: white;
+   background: #3897f0;
+   border: none;
+   cursor: pointer;
+}
+
+.wordmark {
+  background-color: white;
+  height: 90px;
+  margin-bottom: -5px;
+  border: 1px solid #e6e6e6;
+  border-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lobster Two', cursive;
+  font-size: 40px;
+}
+
+.post-index-container {
+  width: 618px;
+  margin: auto;
+  margin-top: 140px;
+}
