@@ -1,0 +1,253 @@
+.post-item-container {
+  width: 618px;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica,
+                Arial, sans-serif;
+  font-size: 14px;
+  border: 1px solid #efefef;
+  margin-bottom: 60px;
+  background-color: white;
+}
+
+.post-header {
+  height: 60px;
+  width: 618px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+
+.item-username {
+  font-weight: 600;
+  margin-left: 2px;
+  text-decoration: none;
+  color: black;
+}
+
+.post-image {
+  margin-bottom: -2px;
+  object-fit: contain;
+}
+
+.post-image img {
+  width:618px;
+}
+
+.post-buttons {
+  margin-left: 16px;
+  width: 64px;
+  box-sizing: border-box;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like-button, .comment-button {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  display: block;
+  background-image: image-url('e838cf9edd53.png');
+}
+
+.post-item-data {
+  width: inherit;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.post-likes {
+  width: 590px;
+}
+
+.liker-link {
+  weight: 600;
+  color: black;
+  text-decoration: none;
+}
+
+.liker-usernames {
+  line-height: 18px;
+}
+
+.likers {
+  font-weight: 600;
+}
+
+.post-caption {
+  margin-top: -2px;
+  padding-bottom: 6px;
+  line-height: 18px;
+}
+
+.post-username-link {
+  font-weight: 600;
+  color: black;
+  text-decoration: none;
+}
+
+.post-timestamp {
+  font-size: 10px;
+  letter-spacing: .2px;
+  color: #999;
+  margin-top: 5px;
+  margin-bottom: 14px;
+}
+
+.post-comments {
+  min-height: 56px;
+  border-top: 1px solid #efefef;
+  display: flex;
+  align-items: center;
+  color: #999;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.post-comment-form {
+  width: 100%;
+}
+
+.post-comment-input {
+  border: 0;
+  max-height: 80px;
+  outline: 0;
+  padding: 0;
+  resize: none;
+  font-size: inherit;
+  line-height: 18px;
+  min-height: 18px;
+  width: 100%;
+  overflow-wrap: break-word;
+}
+
+::-webkit-input-placeholder {
+  text-indent: -4px;
+}
+
+:-moz-placeholder { /* older Firefox*/
+  text-indent: -4px;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  text-indent: -4px;
+}
+
+:-ms-input-placeholder {
+  text-indent: -4px;
+}
+
+.profile-link {
+  text-decoration: none;
+}
+
+.post-show {
+  margin: auto;
+  margin-top: 140px;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: row;
+  width: 933px;
+  margin-bottom: 24px;
+  background-color: white;
+}
+
+.post-show-image {
+  background-color: #fafafa;
+  object-fit: contain;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-show-image img {
+  width: 598px;
+}
+
+.post-show-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica,
+                Arial, sans-serif;
+  font-size: 14px;
+  width: 335px;
+
+}
+
+.post-show-top {
+  width: 287px;
+}
+
+.post-show-header {
+  height: 80px;
+  width: 287px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #efefef;
+}
+
+.post-show-profile-thumbnail {
+  width: 40px;
+  height:40px;
+  margin-right: 10px;
+  img {
+    border-radius: 50%;
+    border: 1px solid #efefef;
+  }
+}
+
+.post-show-comments {
+  width: 311px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.post-show-top .post-caption {
+  margin-top: 16px;
+}
+
+.post-show-data {
+  width:287px;
+  min-height: 145px;
+  border-top: 1px solid #efefef;
+}
+
+.post-show-buttons {
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 64px;
+}
+
+.post-show-footer {
+  height: 82px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-show-like-link {
+  color: blue;
+  cursor: pointer;
+}
+
+.post-show-data .liker-usernames {
+  margin-bottom: 5px;
+}
+
+.post-show-comment-form {
+  margin-top: -4px;
+  height: 56px;
+}
+
+.post-show-comments .post-caption {
+  width: 287px;
+}
