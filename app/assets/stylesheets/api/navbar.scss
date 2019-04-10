@@ -1,0 +1,83 @@
+.navbar {
+  width: 100%;
+  height: 77px;
+  background-color: white;
+  border-bottom: 1px solid #efefef;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.navbar-elements {
+  height: 100%;
+  width: 935px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  cursor: pointer;
+}
+
+.logo-wordmark {
+  font-family: 'Lobster Two', cursive;
+  font-size: 26px;
+  padding-left: 15px;
+  border-left: 1px solid #999;
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  background-image: asset-url('sprites2.png');
+  background-size: 236px 211px;
+  background-position: -75px -112px;
+  margin-right: 18px;
+}
+
+.icon-container {
+  width: 145px;
+  height: 38px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.icon {
+  width: 38px;
+  height: 38px;
+}
+
+.icon:nth-of-type(1) {
+  cursor: pointer;
+  background-image: asset-url('sprites1.png');
+  background-position: -286px -77px;
+}
+.icon:nth-of-type(2) {
+  cursor: pointer;
+  background-image: asset-url('sprites1.png');
+  background-position: -248px -115px;
+}
+
+.icon:nth-of-type(3) {
+  cursor: pointer;
+  background-image: asset-url('sprites1.png');
+  background-position: -286px -154px;
+  transform: rotate(270deg);
+}
+.auth-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.homepage {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
