@@ -1,13 +1,7 @@
-// import React from 'react';
-
-// export default function PostItem(props) {
-//     return <h1>This is a POST!!</h1>
-// };
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// import { renderLikes, renderTimestamp } from '../../util/post_util.js';
+import { renderLikes, renderTimestamp } from '../util/post_util.js';
 // import CommentFormContainer from './comment_form_container';
 // import CommentIndexContainer from './comment_index_container';
 
@@ -90,12 +84,12 @@ class PostItem extends React.Component {
         // comments = post.commentIds.map(id =>
         //     this.props.comments.filter(comment =>
         //         comment.id === id)[0]);
-        // let likers = post.likers;
+        let likers = post.likers;
 
-        // const isLiked = () => {
-        //     return post.likers.map(liker => liker.id)
-        //         .includes(this.props.userId);
-        // }
+        const isLiked = () => {
+            return post.likers.map(liker => liker.id)
+                .includes(this.props.userId);
+        }
 
         return (
             <div className="post-item-container" data-id={`${post.id}`}>
@@ -103,10 +97,26 @@ class PostItem extends React.Component {
                 <div className="post-image">
                      <img src={post.imageUrl} />
                 </div>
+                <PostButtons
+                    userInfo={{
+                        isLiked: isLiked(),
+                        postId: post.id,
+                        userId
+                    }}
+                    createLike={createLike}
+                    deleteLike={deleteLike}
+                />
                 <div className="post-item-data">
+                    <div className="post-likes">
+                        <div className="liker-usernames">
+                            {renderLikes(likers)}
+                        </div>
+                    </div>
+                    <br />
                     <div className="post-caption">
                         <Link className="post-username-link" to={`/users/${post.author_id}`}>{post.username}</Link> {post.caption}
                     </div>
+                    <p className="post-timestamp">{renderTimestamp(post.created_at).toUpperCase()}</p>
                 </div>
             </div>
         );
@@ -151,30 +161,30 @@ export default PostItem;
 //                 <div className="post-image">
 //                     <img src={post.image_url} />
 //                 </div>
-//                 <PostButtons
-//                     userInfo={{
-//                         isLiked: isLiked(),
-//                         postId: post.id,
-//                         userId
-//                     }}
-//                     createLike={createLike}
-//                     deleteLike={deleteLike}
-//                     commentClick={this.commentClick}
-//                 />
-//                 <div className="post-item-data">
-//                     <div className="post-likes">
-//                         <div className="liker-usernames">
-//                             {renderLikes(likers)}
-//                         </div>
-//                     </div>
-//                     <br />
-//                     <div className="post-caption">
-//                         <Link className="post-username-link" to={`/users/${post.author_id}`}>{post.username}</Link> {post.caption}
-//                     </div>
-//                     <CommentIndexContainer comments={comments} />
-//                     <p className="post-timestamp">{renderTimestamp(post.created_at).toUpperCase()}</p>
-//                     <CommentFormContainer postId={post.id} userId={this.props.userId} />
-//                 </div>
+                // <PostButtons
+                //     userInfo={{
+                //         isLiked: isLiked(),
+                //         postId: post.id,
+                //         userId
+                //     }}
+                //     createLike={createLike}
+                //     deleteLike={deleteLike}
+                //     commentClick={this.commentClick}
+                // />
+                // <div className="post-item-data">
+                //     <div className="post-likes">
+                //         <div className="liker-usernames">
+                //             {renderLikes(likers)}
+                //         </div>
+                //     </div>
+                //     <br />
+                //     <div className="post-caption">
+                //         <Link className="post-username-link" to={`/users/${post.author_id}`}>{post.username}</Link> {post.caption}
+                //     </div>
+                //     <CommentIndexContainer comments={comments} />
+                //     <p className="post-timestamp">{renderTimestamp(post.created_at).toUpperCase()}</p>
+                //     <CommentFormContainer postId={post.id} userId={this.props.userId} />
+                // </div>
 //             </div>
 //         );
 //     }
