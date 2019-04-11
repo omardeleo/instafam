@@ -13,5 +13,5 @@ class Post < ApplicationRecord
     through: :likes,
     source: :liker
 
-#   has_many :comments
+  has_many :comments
 end
