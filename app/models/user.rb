@@ -1,20 +1,3 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id              :bigint(8)        not null, primary key
-#  username        :string(30)       not null
-#  name            :string(30)       not null
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  website         :string           not null
-#  bio             :string(150)      not null
-#  email           :string           not null
-#  disabled        :boolean          default(FALSE), not null
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#
-
 class User < ApplicationRecord
     
     attr_reader :password
@@ -24,6 +7,8 @@ class User < ApplicationRecord
     validates :password, length: { minimum: 6 }, allow_nil: true
 
     after_initialize :ensure_session_token
+
+    has_one_attached :image
 
     has_many :posts,
         foreign_key: :author_id,
@@ -57,6 +42,10 @@ class User < ApplicationRecord
     # has_many :followings, 
     #     through: :followingships, 
     #     source: :followed
+
+    def thumbnail 
+        return self.image.variant(resize: '200x200')
+    end
 
     def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
