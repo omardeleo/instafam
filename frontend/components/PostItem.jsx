@@ -8,6 +8,7 @@ import CommentIndexContainer from './CommentIndexContainer';
 function PostHeader(props) {
     return (
         <div className="post-header">
+            <Thumbnail thumb={props.thumb} />
             <Link className="item-username" to={`/users/${props.authorId}`}>{props.username}</Link>
         </div>
     );
@@ -16,7 +17,7 @@ function PostHeader(props) {
 function Thumbnail(props) {
     return (
         <div className="post-show-profile-thumbnail">
-            <img src={props.mini} />
+            <img src={props.thumb} />
         </div>
     );
 }
@@ -77,8 +78,6 @@ class PostItem extends React.Component {
 
     render() {
         const { post, userId, createLike, deleteLike } = this.props
-        // const mini = post.mini;
-
         let comments = [];
         comments = post.commentIds.map(id =>
             this.props.comments.filter(comment =>
@@ -91,7 +90,7 @@ class PostItem extends React.Component {
 
         return (
             <div className="post-item-container" data-id={`${post.id}`}>
-                <PostHeader authorId={post.author_id} username={post.username}/>
+                <PostHeader authorId={post.author_id} username={post.username} thumb={post.thumbUrl}/>
                 <div className="post-image">
                      <img src={post.imageUrl} />
                 </div>
