@@ -7,7 +7,6 @@ import {
 import SessionForm from './SessionForm';
 
 const mapStateToProps = (state) => {
-    console.log('state', state)
     return {
         loggedIn: Boolean(state.session.id),
         errors: state.errors.session,

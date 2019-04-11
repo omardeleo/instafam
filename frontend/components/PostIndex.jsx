@@ -4,7 +4,7 @@ import PostItem from './PostItem';
 class PostIndex extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props)
+
         this.state = {
             currentUserId: this.props.currentUserId,
         };
