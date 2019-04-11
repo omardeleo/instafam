@@ -198,8 +198,11 @@
   height:40px;
   margin-right: 10px;
   img {
+    width: inherit;
+    height: inherit;
     border-radius: 50%;
     border: 1px solid #efefef;
+    object-fit: cover;
   }
 }
 
