@@ -2,7 +2,8 @@ json.extract! post, :id, :author_id, :caption, :created_at
 json.username post.author.username
 json.avatarUrl url_for(post.author.image)
 json.imageUrl url_for(post.image)
-json.thumbUrl url_for(post.author.thumbnail)
+json.avatarUrl url_for(post.author.avatar)
+json.thumbUrl url_for(post.thumbnail)
 json.commentIds post.comments.pluck(:id)
 json.likers post.likers do |liker| 
               json.id liker.id
