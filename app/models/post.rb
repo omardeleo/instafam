@@ -3,6 +3,10 @@ class Post < ApplicationRecord
 
   has_one_attached :image
 
+  def thumbnail 
+    return self.image.variant(combine_options: { resize: "x300", extent: "300x300", gravity: "center"})
+  end
+
   belongs_to :author,
     foreign_key: :author_id,
     class_name: :User
