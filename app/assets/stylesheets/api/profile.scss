@@ -1,0 +1,171 @@
+.profile-container {
+  max-width: 935px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: auto;
+  margin-top: 140px;
+  margin-bottom: 28px;
+}
+
+.profile-link {
+  text-decoration: none;
+}
+
+.profile-header-container{
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.profile-avatar {
+  border-radius: 50%;
+  border: 1px solid #E0E0E0;
+}
+
+.profile-image-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  overflow: hidden;
+  height: 152px;
+  width: 152px;
+  padding: 0 90px;
+}
+
+.profile-image-input {
+  cursor: pointer;
+  border: 1px solid black;
+  height: 152px;
+  width: 152px;
+  opacity: 0;
+  z-index: 1;
+}
+
+.profile-image-thumb {
+  position: absolute;
+}
+
+.profile-header {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.username-header {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 200;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica,
+                Arial, sans-serif;
+  margin-bottom: 25px;
+}
+
+.profile-info {
+  display: flex;
+  font-weight: 600;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica,
+                Arial, sans-serif;
+}
+
+.profile-info > div {
+  margin-right: 40px;
+}
+
+.profile-info > div:last-child {
+  margin: 0;
+}
+
+.weight {
+  font-weight: 400;
+}
+
+/* Grid */
+
+.grid {
+  max-width: 935px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(118px, 1fr));
+  grid-gap: 28px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Post Thumbnail */
+
+.thumbnail-container {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: -3px;
+}
+
+.overlay-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.thumbnail-img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Thumbnail Overlay */
+
+.overlay {
+  display: flex;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.overlay-icon {
+  height: 19px;
+  width: 19px;
+  margin-right: 5px;
+  background-size: 412px 396px;
+  // background-image: image-url('icons2.png');
+}
+
+.heart {
+  background-position: -379px -233px;
+}
+
+.comment {
+  background-position: -379px -274px;
+}
+
+.overlay__data {
+  margin-right: 30px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.overlay__data:last-child {
+  margin-right: 0;
+}
+
+/* Media queries */
+
+@media (max-width: 700px) {
+  .grid {
+    grid-gap: 3px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .overlay {
+    flex-direction: column;
+  }
+
+  .overlay__data {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}
