@@ -90,7 +90,7 @@ class PostItem extends React.Component {
 
         return (
             <div className="post-item-container" data-id={`${post.id}`}>
-                <PostHeader authorId={post.author_id} username={post.username} thumb={post.thumbUrl}/>
+                <PostHeader authorId={post.author_id} username={post.username} thumb={post.avatarUrl}/>
                 <div className="post-image">
                      <img src={post.imageUrl} />
                 </div>
