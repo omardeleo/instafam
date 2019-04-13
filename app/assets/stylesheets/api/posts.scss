@@ -52,6 +52,18 @@
   background-image: asset-url('sprites3.png');
 }
 
+.likeButton {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  display: block;
+  background: asset-url("sprites3.png") -439px -399px no-repeat;
+}
+
+.liked {
+  background: asset-url("sprites3.png") -387px -399px no-repeat;
+}
+
 .post-item-data {
   width: inherit;
   box-sizing: border-box;
