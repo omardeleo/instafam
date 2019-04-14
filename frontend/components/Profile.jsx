@@ -4,6 +4,7 @@ import ProfileItem from './ProfileItem';
 
 class Profile extends React.Component {
     constructor(props) {
+        console.log(props)
         super(props);
         this.uploadProfileImage = this.uploadProfileImage.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,11 +26,11 @@ class Profile extends React.Component {
         reader.onloadend = () => {
             this.setState(
                 {
-                    id: this.props.currentUser.id,
+                    id: this.props.userId,
                     imageFile: file,
                     imageUrl: reader.result,
                     imageName: file.name,
-                    username: this.props.currentUser.username
+                    username: this.props.user.username
                 },
                 this.handleSubmit);
         };
@@ -53,7 +54,8 @@ class Profile extends React.Component {
     }
 
     profileInput() {
-        if (this.props.userId === this.props.currentUserId) {
+        console.log('pros', this.props)
+        if (this.props.user && this.props.userId === this.props.user.id) {
             return <input title="Change Profile Image" className="profile-image-input" type="file" onChange={this.uploadProfileImage} />;
         }
     }
@@ -84,6 +86,7 @@ class Profile extends React.Component {
             <div className="profile-container">
                 <div className="profile-header-container">
                     <div className="profile-image-container">
+                        {this.profileInput()}
                         {this.profileImage()}
                     </div>
                     <div className="profile-header">
