@@ -11,14 +11,9 @@
   text-decoration: none;
 }
 
-.profile-header-container{
+.profile-header-container {
   display: flex;
   margin-bottom: 50px;
-}
-
-.profile-avatar {
-  border-radius: 50%;
-  border: 1px solid #E0E0E0;
 }
 
 .profile-image-container {
@@ -31,6 +26,12 @@
   padding: 0 90px;
 }
 
+.profile-avatar {
+  border-radius: 50%;
+  border: 1px solid #E0E0E0;
+  position: absolute;
+}
+
 .profile-image-input {
   cursor: pointer;
   border: 1px solid black;
@@ -38,10 +39,6 @@
   width: 152px;
   opacity: 0;
   z-index: 1;
-}
-
-.profile-image-thumb {
-  position: absolute;
 }
 
 .profile-header {
@@ -130,7 +127,6 @@
   width: 19px;
   margin-right: 5px;
   background-size: 412px 396px;
-  // background-image: image-url('icons2.png');
 }
 
 .heart {
