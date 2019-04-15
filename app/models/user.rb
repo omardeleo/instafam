@@ -21,27 +21,27 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Comment
 
-    # has_many(
-    #     :followerships,
-    #     class_name: 'Follow',
-    #     foreign_key: :followee_id,
-    #     primary_key: :id
-    # )
+    has_many(
+        :followerships,
+        class_name: 'Follow',
+        foreign_key: :followee_id,
+        primary_key: :id
+    )
 
-    # has_many :followers, 
-    #     through: :followerships, 
-    #     source: :follower
+    has_many :followers, 
+        through: :followerships, 
+        source: :follower
 
-    # has_many(
-    #     :followingships,
-    #     class_name: 'Follow',
-    #     foreign_key: :follower_id,
-    #     primary_key: :id
-    # )
+    has_many(
+        :followingships,
+        class_name: 'Follow',
+        foreign_key: :follower_id,
+        primary_key: :id
+    )
 
-    # has_many :followings, 
-    #     through: :followingships, 
-    #     source: :followed
+    has_many :followings, 
+        through: :followingships, 
+        source: :followed
 
     def avatar 
         if self.image.attached?
