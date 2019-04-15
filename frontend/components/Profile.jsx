@@ -75,9 +75,13 @@ class Profile extends React.Component {
         });
 
         let username = "";
+        let followers = [];
+        let followings = [];
 
         if (this.props.user) {
             username = this.props.user.username;
+            followers = this.props.user.followers;
+            followings = this.props.user.followings;
         }
         
         return (
@@ -93,8 +97,13 @@ class Profile extends React.Component {
                             <div className="number-posts">
                                 {this.numberPosts()} <span className="weight">posts</span>
                             </div>
+                            <div className="number-followers">
+                                {followers.length} <span className="weight">followers</span>
+                            </div>
+                            <div className="number-following">
+                                {followings.length} <span className="weight">following</span>
+                            </div>
                         </div>
-
                     </div>
                 </div>
                 <div className="grid">
