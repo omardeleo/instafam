@@ -6,7 +6,7 @@ import NavbarContainer from './NavbarContainer';
 import SessionFormContainer from './SessionFormContainer';
 import ProfileContainer from './ProfileContainer';
 import PostIndexContainer from './PostIndexContainer';
-// import CreatePostFormContainer from './post/create_post_form_container';
+import CreatePostFormContainer from './CreatePostFormContainer';
 import PostShowContainer from './PostShowContainer';
 
 
@@ -17,6 +17,7 @@ const App = () => (
             <AuthRoute exact path="/login" component={SessionFormContainer} />
             <AuthRoute exact path="/signup" component={SessionFormContainer} />
             <ProtectedRoute path="/profile" component={ProfileContainer} />
+            <ProtectedRoute path="/new" component={CreatePostFormContainer} />
             <Route path="/posts/:postId" component={PostShowContainer} />
             <Route path="/users/:userId" component={ProfileContainer} />
             <ProtectedRoute path="/" component={PostIndexContainer} />
