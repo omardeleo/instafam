@@ -11,6 +11,7 @@ class Navbar extends React.Component {
 
     exitClick() {
         this.props.logout();
+        this.props.history.push('/');
     }
 
     loadProfile() {
