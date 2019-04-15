@@ -126,15 +126,15 @@
   height: 19px;
   width: 19px;
   margin-right: 5px;
-  background-size: 412px 396px;
+  background: asset-url("sprites4.png")
 }
 
 .heart {
-  background-position: -379px -233px;
+  background-position: -225px -399px;
 }
 
 .comment {
-  background-position: -379px -274px;
+  background-position: -246px -399px;
 }
 
 .overlay__data {
