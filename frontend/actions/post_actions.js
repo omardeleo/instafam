@@ -56,11 +56,11 @@ export const requestPost = id => dispatch => (
     ))
 );
 
-// export const createPost = post => dispatch => (
-//     APIUtil.createPost(post).then(post => (
-//         dispatch(receivePost(post))
-//     ))
-// );
+export const createPost = post => dispatch => (
+    APIUtil.createPost(post).then(post => (
+        dispatch(receivePost(post))
+    ))
+);
 
 // export const deletePost = post => dispatch => (
 //     ApiUtil.deletePost(post).then(post => (

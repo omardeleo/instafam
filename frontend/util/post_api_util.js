@@ -20,15 +20,15 @@ export const fetchPost = (id) => {
     });
 };
 
-// export const createPost = (formData) => {
-//     return $.ajax({
-//         method: 'POST',
-//         url: 'api/posts',
-//         data: formData,
-//         processData: false,
-//         contentType: false,
-//     });
-// };
+export const createPost = (formData) => {
+    return $.ajax({
+        method: 'POST',
+        url: 'api/posts',
+        data: formData,
+        processData: false,
+        contentType: false,
+    });
+};
 
 // export const deletePost = (id) => {
 //     return $.ajax({
