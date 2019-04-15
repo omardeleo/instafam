@@ -6,7 +6,6 @@ import PostShow from './PostShow';
 
 const mapStateToProps = (state, ownProps) => {
     const post = state.entities.posts[ownProps.match.params.postId];
-    console.log('post', post)
     return {
         post,
         users: state.entities.users,
