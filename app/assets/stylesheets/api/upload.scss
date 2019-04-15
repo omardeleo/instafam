@@ -1,0 +1,65 @@
+.create-post-form-container {
+  width: 325px;
+  margin:auto;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropzone {
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica,
+                Arial, sans-serif;
+  height: 325px;
+  width: 325px;
+  color: #a9a9a9;
+  display: block;
+  background-color: white;
+  border: 2px dashed #a9a9a9;
+  background-image: url("https://i.imgur.com/C9Swade.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.dropzone-image {
+  width: 100%;
+  object-fit: cover;
+  background-color: white;
+}
+
+.dropzone-text {
+  margin-top: 286px;
+  font-size: 14px;
+  color: #888;
+}
+
+.create-post-form {
+  width: 325px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.caption-text-box {
+  margin-top: 15px;
+  width: 320px;
+  padding-left: 3px;
+}
+
+.create-post-button {
+  height: 30px;
+   width: 280px;
+   border-radius: 4px;
+   font-size: 15px;
+   color: white;
+   background: #3897f0;
+   border: none;
+   cursor: pointer;
+}
