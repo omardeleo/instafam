@@ -7,7 +7,7 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {
             email: "",
-            full_name: "",
+            name: "",
             username: "",
             password: ""
         };
@@ -33,6 +33,7 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        console.log('stat',this.state)
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
     }
@@ -95,9 +96,9 @@ class SessionForm extends React.Component {
             "" :
             <input type="text"
                 className="login-input"
-                value={this.state.full_name}
+                value={this.state.name}
                 placeholder="Full Name"
-                onChange={this.update('full_name')}
+                onChange={this.update('name')}
             />;
 
         const submitButton = this.props.formType === "login" ?
