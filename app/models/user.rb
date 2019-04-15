@@ -44,7 +44,7 @@ class User < ApplicationRecord
     #     source: :followed
 
     def avatar 
-        return self.image.variant(combine_options: { resize: "x150", extent: "150x150", gravity: "center"})
+        return self.image.variant(combine_options: { resize: "x150^", extent: "150x150", gravity: "center"})
     end
 
     def self.find_by_credentials(username, password)
