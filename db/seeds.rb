@@ -21,7 +21,11 @@ seeds = [["demouser", "Demo User", "demo.jpg"],
 
 if (User.count == 0)
     seeds.each_with_index do |seed, i|
-        user = User.create!(username: seed[0], password: "password", email: "example#{i}@example.com", name: seed[1])
+        user = User.create!(
+            username: seed[0], 
+            password: Rails.application.credentials.demo[:password], 
+            email: "example#{i}@example.com", 
+            name: seed[1])
         file = open("https://s3.amazonaws.com/instafam-seeds/#{seed[2]}")
         user.image.attach(io: file, filename: seed[2])
     end
