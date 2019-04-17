@@ -53,7 +53,7 @@
   font-weight: 200;
   font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica,
                 Arial, sans-serif;
-  margin-bottom: 25px;
+  
 }
 
 .profile-info {
@@ -74,6 +74,46 @@
 .weight {
   font-weight: 400;
 }
+
+.followBtn {
+  color: white;
+  background: #3897f0;
+  border-color: #3897f0;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  border-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 26px;
+  max-width: 115px;
+  height: 28px;
+  padding: 0 24px;
+  margin-left: 20px;
+  margin-bottom: 4px;
+}
+
+.followBtn:focus {
+  outline: 0;
+}
+
+.following {
+  border-color: #dbdbdb;
+  color: #262626;
+  background-color: #fafafa;
+}
+
+.header-top {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-bottom: 25px;
+}
+
 
 /* Grid */
 

@@ -113,8 +113,10 @@ class Profile extends React.Component {
                         {this.profileImage()}
                     </div>
                     <div className="profile-header">
-                        <h1 className="username-header">{username}</h1>
-                        { displayButton }
+                        <div className="header-top">
+                            <h1 className="username-header">{username}</h1>
+                            { displayButton }
+                        </div>
                         <div className="profile-info">
                             <div className="number-posts">
                                 {this.numberPosts()} <span className="weight">posts</span>
