@@ -1,12 +1,15 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+
 import ProfileItem from './ProfileItem';
+import FollowButton from './FollowButton';
 
 class Profile extends React.Component {
     constructor(props) {
         super(props);
         this.uploadProfileImage = this.uploadProfileImage.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.following = this.following.bind(this);
     }
 
     componentDidMount() {
@@ -65,6 +68,14 @@ class Profile extends React.Component {
             return "";
         }
     }
+    
+    following() {
+        if (this.props.user) {
+            return this.props.user.followers.map(follower => follower.id)
+                .includes(this.props.currentUserId);
+        }
+        return false;
+    }
 
     render() {
         let posts = this.props.posts.reverse().map(post => {
@@ -77,12 +88,22 @@ class Profile extends React.Component {
         let username = "";
         let followers = [];
         let followings = [];
+        let profileId = null;
 
         if (this.props.user) {
             username = this.props.user.username;
             followers = this.props.user.followers;
             followings = this.props.user.followings;
+            profileId = this.props.user.id
         }
+
+        const displayButton = profileId !== this.props.currentUserId ? <FollowButton
+            following={this.following()}
+            currentUserId={this.props.currentUserId}
+            profileId={profileId}
+            createFollow={this.props.createFollow}
+            deleteFollow={this.props.deleteFollow}
+        /> : "";
         
         return (
             <div className="profile-container">
@@ -93,6 +114,7 @@ class Profile extends React.Component {
                     </div>
                     <div className="profile-header">
                         <h1 className="username-header">{username}</h1>
+                        { displayButton }
                         <div className="profile-info">
                             <div className="number-posts">
                                 {this.numberPosts()} <span className="weight">posts</span>
