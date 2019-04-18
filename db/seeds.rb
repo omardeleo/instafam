@@ -18,6 +18,28 @@ seeds = [["demouser", "Demo User", "demo.jpg"],
     ["travel_nomad", "World Wanderer", "travel.jpg"],
     ["artistic", "Art Page", "art.jpg"]]
 
+moreSeeds = [["newyorkcity", "New York City", "nyc.jpg"],
+    ["seinfeldfans", "Seinfeld Fan Page", "seinfeld.jpg"],
+    ["techstuff", "Cool Technology Stuff", "tech.jpg"],
+    ["veggies", "Nothing But Vegetables", "veggies.jpg"]]
+
+moreSeeds.each_with_index do |seed, i|
+    user = User.create!(
+    username: seed[0], 
+    password: Rails.application.credentials.demo[:password], 
+    email: "example#{i}@example.com", 
+    name: seed[1])
+    file = open("https://s3.amazonaws.com/instafam-seeds/#{seed[2]}")
+    user.image.attach(io: file, filename: seed[2])
+end
+
+moreSeeds.each do |seed|
+    user = User.where(username: seed[0]).first
+    file = open("https://s3.amazonaws.com/instafam-seeds/#{seed[2]}")
+    p = Post.new(author_id: user.id, caption: "First Instafam post! 😎🎉")
+    p.image.attach(io: file, filename: seed[2])
+    p.save!
+end
 
 if (User.count == 0)
     seeds.each_with_index do |seed, i|
