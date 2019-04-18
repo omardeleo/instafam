@@ -26,14 +26,14 @@ Instafam is a single-page photo-sharing web application based on  [Instagram](ht
 #### User Authentcation
 
 <div align="center">
-    <img src="https://media.giphy.com/media/62d2iqjBQIfagXWUKe/giphy.gif" title="Login Screen"/>
+    <img src="https://media.giphy.com/media/62d2iqjBQIfagXWUKe/giphy.gif" style="width: 70%" title="Login Screen" />
 </div>
 Instafam implements a custom built authorization pattern. The  **BCrypt**  gem is used to hash user passwords to store in the database, and later check that hash to authenticate the user. The application’s root HTML page is bootstrapped with the current user to ensure that the user’s session remains uninterrupted in the case of a redirect or page refresh. A login attempt with invalid or incomplete credentials renders an error message.
 
 #### Image Uploads
 
 <div align="center">
-    <img src="https://media.giphy.com/media/1Aj19jd9ycidkzkNgA/giphy.gif" title="Image Upload" />
+    <img src="https://media.giphy.com/media/1Aj19jd9ycidkzkNgA/giphy.gif" style="width: 70%" title="Image Upload" />
 </div>
 Instafam users may create a new post by uploading an image in the New Post page. Users may also upload a profile image in their Profile page. In both cases, images are uploaded to and stored in an  **AWS S3**  bucket via the  **Paperclip**  gem. When a post image or profile image is uploaded, Paperclip automatically generates thumbnails that are displayed in the post author’s Profile page and in the post’s header, respectively.
 
