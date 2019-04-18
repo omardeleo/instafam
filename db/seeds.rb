@@ -27,7 +27,7 @@ moreSeeds.each_with_index do |seed, i|
     user = User.create!(
     username: seed[0], 
     password: Rails.application.credentials.demo[:password], 
-    email: "example#{i}@example.com", 
+    email: "example_#{i}@example.com", 
     name: seed[1])
     file = open("https://s3.amazonaws.com/instafam-seeds/#{seed[2]}")
     user.image.attach(io: file, filename: seed[2])
