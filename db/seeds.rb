@@ -8,70 +8,51 @@
 
 require 'open-uri'
 
-# seeds = [["demouser", "Demo User", "demo.jpg"],
-#     ["pizza.24.7", "Pizza Lovers", "pizza.jpg"],
-#     ["catsofinstafam", "Cats and meowr", "cat.jpg"],
-#     ["mets_maniac", "Lifelong Mets fan #LGM", "mets.jpg"],
-#     ["sciencefacts", "Science Facts", "science.jpg"],
-#     ["classic.simpsons", "Classic Simpsons", "simpsons.jpg"],
-#     ["retro_80s_90s", "Retro 80's and 90's", "retro.jpg"],
-#     ["travel_nomad", "World Wanderer", "travel.jpg"],
-#     ["artistic", "Art Page", "art.jpg"]]
+seeds = [["demouser", "Demo User", "demo.jpg"],
+    ["pizza.24.7", "Pizza Lovers", "pizza.jpg"],
+    ["catsofinstafam", "Cats and meowr", "cat.jpg"],
+    ["mets_maniac", "Lifelong Mets fan #LGM", "mets.jpg"],
+    ["sciencefacts", "Science Facts", "science.jpg"],
+    ["classic.simpsons", "Classic Simpsons", "simpsons.jpg"],
+    ["retro_80s_90s", "Retro 80's and 90's", "retro.jpg"],
+    ["travel_nomad", "World Wanderer", "travel.jpg"],
+    ["artistic", "Art Page", "art.jpg"],
+    ["newyorkcity", "New York City", "nyc.jpg"],
+    ["seinfeldfans", "Seinfeld Fan Page", "seinfeld.jpg"],
+    ["techstuff", "Cool Technology Stuff", "tech.jpg"],
+    ["veggies", "Nothing But Vegetables", "veggies.jpg"]]
 
-# moreSeeds = [["newyorkcity", "New York City", "nyc.jpg"],
-#     ["seinfeldfans", "Seinfeld Fan Page", "seinfeld.jpg"],
-#     ["techstuff", "Cool Technology Stuff", "tech.jpg"],
-#     ["veggies", "Nothing But Vegetables", "veggies.jpg"]]
+if (User.count == 0)
+    seeds.each_with_index do |seed, i|
+        user = User.create!(
+            username: seed[0], 
+            password: Rails.application.credentials.demo[:password], 
+            email: "example#{i}@example.com", 
+            name: seed[1])
+        file = open("https://s3.amazonaws.com/instafam-seeds/#{seed[2]}")
+        user.image.attach(io: file, filename: seed[2])
+    end
 
-# moreSeeds.each_with_index do |seed, i|
-#     user = User.create!(
-#     username: seed[0], 
-#     password: Rails.application.credentials.demo[:password], 
-#     email: "example_#{i}@example.com", 
-#     name: seed[1])
-#     file = open("https://s3.amazonaws.com/instafam-seeds/#{seed[2]}")
-#     user.image.attach(io: file, filename: seed[2])
-# end
+    seeds.each do |seed|
+        user = User.where(username: seed[0]).first
+        file = open("https://s3.amazonaws.com/instafam-seeds/#{seed[2]}")
+        p = Post.new(author_id: user.id, caption: "First Instafam post! 😎🎉")
+        p.image.attach(io: file, filename: seed[2])
+        p.save!
+    end
+end
 
-# moreSeeds.each do |seed|
-#     user = User.where(username: seed[0]).first
-#     file = open("https://s3.amazonaws.com/instafam-seeds/#{seed[2]}")
-#     p = Post.new(author_id: user.id, caption: "First Instafam post! 😎🎉")
-#     p.image.attach(io: file, filename: seed[2])
-#     p.save!
-# end
+Follow.destroy_all
 
-# if (User.count == 0)
-#     seeds.each_with_index do |seed, i|
-#         user = User.create!(
-#             username: seed[0], 
-#             password: Rails.application.credentials.demo[:password], 
-#             email: "example#{i}@example.com", 
-#             name: seed[1])
-#         file = open("https://s3.amazonaws.com/instafam-seeds/#{seed[2]}")
-#         user.image.attach(io: file, filename: seed[2])
-#     end
-
-#     seeds.each do |seed|
-#         user = User.where(username: seed[0]).first
-#         file = open("https://s3.amazonaws.com/instafam-seeds/#{seed[2]}")
-#         p = Post.new(author_id: user.id, caption: "First Instafam post! 😎🎉")
-#         p.image.attach(io: file, filename: seed[2])
-#         p.save!
-#     end
-# end
-
-# Follow.destroy_all
-
-# User.all.each do |user1|
-#     id1 = user1.id
-#     User.all.each do |user2|
-#         id2 = user2.id
-#         if (id1 != id2) 
-#             Follow.create!(follower_id: id1, followee_id: id2)
-#         end
-#     end
-# end
+User.all.each do |user1|
+    id1 = user1.id
+    User.all.each do |user2|
+        id2 = user2.id
+        if (id1 != id2) 
+            Follow.create!(follower_id: id1, followee_id: id2)
+        end
+    end
+end
 
 Like.destroy_all
 
